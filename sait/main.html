@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Фон с модальным окном</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="background">
+  <h1> Лина нажми на кнопочку! </h1>
+  <img src="mochi-cat-love.gif" alt="Анимация">
+  <button id="tykButton">Тык</button>
+</div>
+
+<!-- Модальное окно -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" id="closeButton">&times;</span>
+    <p>Лина, ты для меня невероятно ценна. Мне очень приятно проводить с тобой время, и я всегда с нетерпением жду наших встреч. Ты приносишь радость мои дни. 💖
+      С наступающим Новым годом! Пусть этот год принесет тебе только счастье, удачу и много ярких моментов, а каждый день будет наполнен радостью и любовью!
+    </p>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('modal');
+  const tykButton = document.getElementById('tykButton');
+  const closeButton = document.getElementById('closeButton');
+
+  tykButton.addEventListener('click', () => {
+    modal.style.display = 'flex';
+  });
+
+  closeButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Закрытие окна при клике вне модального содержимого
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>
